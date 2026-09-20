@@ -1,0 +1,49 @@
+Order Date,Category,Sub-Category,Region,Sales,Quantity,Profit
+2025-01-05,Technology,Phones,West,25000,5,5000
+2025-01-10,Furniture,Chairs,East,18000,3,2500
+2025-01-15,Office Supplies,Paper,South,9000,10,1800
+2025-01-20,Technology,Laptops,North,45000,4,9000
+2025-02-03,Furniture,Tables,West,22000,5,3500
+2025-02-08,Office Supplies,Binders,East,12000,8,2200
+2025-02-14,Technology,Phones,South,30000,6,6500
+2025-02-20,Furniture,Chairs,North,16000,4,2100
+2025-03-02,Office Supplies,Paper,West,11000,12,2300
+2025-03-07,Technology,Laptops,East,52000,5,11000
+2025-03-15,Furniture,Tables,South,19000,4,2800
+2025-03-22,Office Supplies,Binders,North,13500,9,2500
+2025-04-05,Technology,Phones,West,28000,5,5800
+2025-04-12,Furniture,Chairs,East,21000,4,3200
+2025-04-18,Office Supplies,Paper,South,10000,11,2000
+2025-04-25,Technology,Laptops,North,48000,4,9500
+2025-05-03,Furniture,Tables,West,25000,5,4200
+2025-05-10,Office Supplies,Binders,East,14000,10,2700
+2025-05-17,Technology,Phones,South,32000,6,7000
+2025-05-25,Furniture,Chairs,North,17500,3,2400
+2025-06-04,Office Supplies,Paper,West,12500,13,2600
+2025-06-11,Technology,Laptops,East,55000,5,12000
+2025-06-18,Furniture,Tables,South,23000,4,3500
+2025-06-25,Office Supplies,Binders,North,15000,11,3000
+2025-07-05,Technology,Phones,West,35000,7,7800
+2025-07-12,Furniture,Chairs,East,19500,4,2900
+2025-07-19,Office Supplies,Paper,South,11500,12,2400
+2025-07-26,Technology,Laptops,North,60000,6,13500
+2025-08-04,Furniture,Tables,West,27000,5,4500
+2025-08-11,Office Supplies,Binders,East,15500,10,3100
+2025-08-18,Technology,Phones,South,38000,7,8500
+2025-08-25,Furniture,Chairs,North,20000,4,3100
+2025-09-05,Office Supplies,Paper,West,13000,14,2800
+2025-09-12,Technology,Laptops,East,62000,6,14000
+2025-09-19,Furniture,Tables,South,29000,5,5000
+2025-09-26,Office Supplies,Binders,North,16000,11,3300
+2025-10-04,Technology,Phones,West,40000,8,9200
+2025-10-11,Furniture,Chairs,East,21500,4,3400
+2025-10-18,Office Supplies,Paper,South,12500,13,2600
+2025-10-25,Technology,Laptops,North,68000,7,15500
+2025-11-03,Furniture,Tables,West,31000,6,5500
+2025-11-10,Office Supplies,Binders,East,17000,12,3500
+2025-11-17,Technology,Phones,South,42000,8,9800
+2025-11-24,Furniture,Chairs,North,22500,5,3600
+2025-12-05,Office Supplies,Paper,West,14000,15,3000
+2025-12-12,Technology,Laptops,East,72000,7,17000
+2025-12-19,Furniture,Tables,South,33000,6,6000
+2025-12-26,Office Supplies,Binders,North,18000,13,3800
