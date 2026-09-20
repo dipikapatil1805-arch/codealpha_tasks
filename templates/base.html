@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Books | Web Scraping Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .books-container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .books-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .books-header h1 {
+            margin: 0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input {
+            padding: 12px 15px;
+            width: 280px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .clear-btn {
+            display: inline-block;
+            padding: 12px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .book-link {
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .no-books {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .book-count {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .books-container {
+                width: 95%;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .books-header {
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="books-container">
+
+    <div class="books-header">
+
+        <div>
+            <h1>📚 Books Collection</h1>
+
+            {% if search %}
+                <p>Search results for: <strong>{{ search }}</strong></p>
+            {% else %}
+                <p>All scraped books</p>
+            {% endif %}
+        </div>
+
+        <form method="GET" action="{{ url_for('books') }}" class="search-box">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search book title..."
+                value="{{ search }}"
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+            {% if search %}
+                <a href="{{ url_for('books') }}" class="clear-btn">
+                    Clear
+                </a>
+            {% endif %}
+
+        </form>
+
+    </div>
+
+
+    <div class="book-count">
+        <strong>{{ books|length }}</strong> book(s) found
+    </div>
+
+
+    {% if books %}
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Availability</th>
+                    <th>Book URL</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for book in books %}
+
+                <tr>
+
+                    <td>{{ loop.index }}</td>
+
+                    <td>
+                        {{ book["Title"] }}
+                    </td>
+
+                    <td>
+                        £{{ "%.2f"|format(book["Price"]) }}
+                    </td>
+
+                    <td>
+                        {{ book["Rating"] }}
+                    </td>
+
+                    <td>
+                        {{ book["Availability"] }}
+                    </td>
+
+                    <td>
+                        <a
+                            href="{{ book['Book URL'] }}"
+                            target="_blank"
+                            class="book-link"
+                        >
+                            View Book
+                        </a>
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="no-books">
+
+        <h2>No books found</h2>
+
+        {% if search %}
+            <p>Try searching for a different book title.</p>
+        {% else %}
+            <p>No book records are available in the database.</p>
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

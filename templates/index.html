@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Dashboard - BookScope
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="dashboard-header">
+
+    <div>
+
+        <h1>
+            Dashboard
+        </h1>
+
+        <p class="text-muted">
+            Web Scraping & Book Dataset Management
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <span class="badge bg-success">
+            System Online
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- Statistics -->
+
+<div class="stats-container">
+
+
+    <!-- Total Books -->
+
+    <div class="stat-card">
+
+        <h3>
+            Total Books
+        </h3>
+
+        <div class="value">
+
+            {{ total_books }}
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Average Price -->
+
+    <div class="stat-card">
+
+        <h3>
+            Average Price
+        </h3>
+
+        <div class="value">
+
+            {{ average_price }}
+
+        </div>
+
+    </div>
+
+
+
+    <!-- In Stock -->
+
+    <div class="stat-card">
+
+        <h3>
+            In Stock
+        </h3>
+
+        <div class="value">
+
+            {{ in_stock }}
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Ratings -->
+
+    <div class="stat-card">
+
+        <h3>
+            Ratings
+        </h3>
+
+        <div class="value">
+
+            {{ rating_count }}
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
